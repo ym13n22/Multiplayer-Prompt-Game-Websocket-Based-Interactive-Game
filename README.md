@@ -1,4 +1,5 @@
 🚀 Project Overview
+
 This application allows multiple users to join a game as players or audience members, where they can:
 
 Suggest prompts
@@ -18,6 +19,7 @@ Interactive Client: A VueJS-based frontend where users register, log in, and par
 Display Client: A spectator view that shows game progress and results (accessible at /display).
 
 🧱 Tech Stack
+
 NodeJS: WebSocket server and cloud deployment
 
 VueJS: Client-side interactive interfaces
@@ -29,12 +31,15 @@ Azure Functions: Backend APIs for authentication and prompt storage
 Google App Engine: Server deployment
 
 🧩 Features
+
 ✅ Authentication
+
 User registration and login using username and password
 
 Players and audience members distinguished automatically
 
 🧠 Game Flow
+
 Joining phase: Players join until the host starts the game
 
 Prompt submission: Players and audience submit creative prompts
@@ -48,6 +53,7 @@ Scoring phase: Scores are tallied per round and cumulatively
 Final leaderboard: Total scores displayed when the game ends
 
 📺 Display Client
+
 A dedicated display view for shared screens, showing:
 
 Game status and instructions
