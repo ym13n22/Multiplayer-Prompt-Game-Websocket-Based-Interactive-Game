@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <h2 class="title">ECS Example Game Display</h2>
+
+    <div id="game">
+        <div v-if="connected && currentStage != 'PromptCollection' && currentStage != 'Answer' && currentStage != 'Voting' && currentStage != 'ScoresShow' && currentStage != 'FinalScore' ">
+            <ul id="chat">
+                <li v-for="message in messages">{{message}}</li>
+            </ul>
+            <div class="host-container">
+                <h4> Waiting for everyone to join!</h4>
+                <a id="start-link" href="#" class="join-link">Start Now</a>
+                <h5>{{playersNumber}} players have joined</h5>
+            </div>
+            <script>
+                // 获取当前页面的 URL
+                const currentUrl = window.location.href;
+            
+                // 去掉 '/display' 的部分
+                const newUrl = currentUrl.replace(/\/display$/, '');
+            
+                // 设置链接的 href 属性
+                document.getElementById('start-link').href = newUrl;
+            </script>
+            <ul class="players-list">
+                <li v-for="(player, index) in players" :key="index">
+                    {{ player }}
+                </li>
+            </ul>
+            <div class="host-container">
+                <h5>{{audiencesNumber}} Audiences have joined</h5>
+            </div>
+            <ul class="players-list">
+                <li v-for="(audience, index) in audiences" :key="index">
+                    {{ audience }}
+                </li>
+            </ul>
+        </div>
+        
+        <div v-else-if="connected && currentStage === 'PromptCollection'">
+            <%- include('promptCollectDisplay'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'Answer'">
+            <%- include('answerStageDisplay'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'Voting'">
+            <%- include('VotingDisplay'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'ScoresShow'">
+            <%- include('score'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'FinalScore'">
+            <%- include('finalScores'); -%>
+        </div>
+        <div v-else>
+            <p>Connecting...</p>
+        </div>
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>

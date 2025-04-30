@@ -1,0 +1,36 @@
+<div id="promptConnectionDisplay">
+    <div class="host-container">
+        <h4> Waiting for everyone to join!</h4>
+        <h5> players</h5>
+    </div>
+    <ul class="players-list">
+        <li v-for="(player, index) in players" :key="index">
+            {{ player }}
+        </li>
+    </ul>
+    <div class="host-container">
+        <h5> Audience</h5>
+    </div>
+    <ul class="players-list">
+        <li v-for="(audience, index) in audiences" :key="index">
+            {{ audience }}
+        </li>
+    </ul>
+    <div class="input-container">
+        <h2>Game Start: Prompt collection stage</h2>
+    </div>
+    <div class="input-container">
+        <h3> {{ roundTitle }}</h3>
+    </div>
+    <div class="input-container">
+        <h3> {{ numberOfPromptsDisplay }} have been received from</h3>
+    </div>
+
+    <ul class="players-list">
+        <li v-for="(player, index) in promptSubmittedDisplay" :key="index">
+            {{ player }}
+        </li>
+    </ul>
+
+
+</div>

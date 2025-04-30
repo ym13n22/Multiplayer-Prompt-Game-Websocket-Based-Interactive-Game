@@ -1,0 +1,386 @@
+body {
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #acc5d0;
+}
+.title {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+.container {
+    background-color: rgba(255,255,255,0.8);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 100vh;
+}
+#chat { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    overflow: auto;
+    max-height: 80vh;
+}
+#chat li { 
+    padding: 5px 10px; 
+}
+#chat li:nth-child(odd) { 
+    background-color: rgba(0,0,0,0.2); 
+}
+body {
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #acc5d0;
+}
+.title {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+}
+.container {
+    background-color: rgba(255,255,255,0.8);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height: 100vh;
+}
+#chat { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    overflow: auto;
+    max-height: 80vh;
+}
+#chat li { 
+    padding: 5px 10px; 
+}
+#chat li:nth-child(odd) { 
+    background-color: rgba(0,0,0,0.2); 
+}
+.input-container {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.prompt-container {
+    margin-bottom: 15px;
+    display: flex; /* 启用 Flexbox 布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    justify-content: center; /* 垂直方向居中 */
+    align-items: stretch; /* 水平方向居中 */
+  }
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+.buttonRight-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+.buttonLeft-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+.host-container {
+    margin-bottom: 15px; /* 与按钮保持间距 */
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.players-list {
+    display: flex; /* 设置为 Flexbox 布局，使元素水平排列 */
+    flex-wrap: wrap; /* 当元素超出容器宽度时自动换行 */
+    list-style: none; /* 去掉默认的列表样式 */
+    padding: 0; /* 去掉默认的内边距 */
+    margin: 0; /* 去掉默认的外边距 */
+}
+
+.players-list li {
+    margin-right: 10px; /* 为每个列表项添加右边距 */
+    padding: 8px 16px; /* 给每个名字加上内边距 */
+    border: 2px solid #3498db; /* 给每个名字添加蓝色边框 */
+    border-radius: 12px; /* 设置圆角，使边框更圆滑 */
+    background-color: #ecf0f1; /* 给每个框添加背景色 */
+    font-size: 14px; /* 设置字体大小 */
+    color: #2c3e50; /* 设置字体颜色 */
+    white-space: nowrap; /* 确保每个 player 名字不会换行 */
+}
+.players-list li:hover {
+    background-color: #bdc3c7; /* 鼠标悬停时改变背景颜色 */
+}
+
+
+
+.votingButton-container {
+    display: flex;
+    justify-content: space-between; /* 按钮左右分布 */
+    flex-wrap: wrap;                /* 当空间不足时，按钮换行 */
+    gap: 10px;                      /* 按钮之间的间距 */
+    width: 100%;                    /* 容器宽度为父容器的100% */
+    max-width: 600px;               /* 可选：控制容器的最大宽度 */
+    margin: 0 auto;                 /* 居中容器 */
+}
+
+/* 按钮样式 */
+.votingButton-container button {
+    flex: 1 1 48%;  /* 按钮占据容器宽度的48%，保证左右有间隙 */
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color:black;
+    transition: background-color 0.3s;
+}
+
+/* 按钮悬停效果 */
+.votingButton-container button:hover {
+    background-color: rgb(200, 195, 195);
+}
+.scoreList-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+.scrollable-lists-container {
+    display: flex; /* 水平排列 */
+    gap: 20px; /* 两个列表之间的间距 */
+  }
+  
+.scrollable-list {
+    list-style-type: none; /* 去掉默认的圆点样式 */
+    margin: 0;
+    padding: 0;
+    max-height: 200px; /* 设置列表的最大高度 */
+    overflow-y: auto; /* 垂直滚动 */
+    width: 150px; /* 每个列表的固定宽度 */
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 5px;
+    background-color: #fff; /* 背景色 */
+  }
+  
+.scrollable-list li {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+/* 第一行加粗 */
+.scrollable-list li:nth-child(1) {
+    font-weight: bold;
+}
+
+/* 第二行橘色 */
+.scrollable-list li:nth-child(2) {
+    color: orange;
+}
+
+/* 第三行红色 */
+.scrollable-list li:nth-child(3) {
+    color: red;
+}
+
+/* 后面其他行保持正常 */
+.scrollable-list li:nth-child(n+4) {
+    color: inherit; /* 继承默认颜色 */
+}
+
+/* 悬停效果（统一所有行） */
+.scrollable-list li:hover {
+    background-color: #ececec; /* 悬停背景色 */
+}
+
+
+.scrol-lists-container {
+    display: flex; /* 水平排列 */
+    gap: 20px; /* 列表之间的间距 */
+    justify-content: center; /* 居中显示 */
+    align-items: flex-start; /* 让顶部对齐 */
+}
+
+/* 每个列表的外层容器 */
+.scrol-list-wrapper {
+    display: flex;
+    flex-direction: column; /* 垂直布局 */
+    align-items: center; /* 标题居中 */
+}
+
+/* 标题样式 */
+.list-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.gold-title {
+    color: gold; /* 中间标题为金色 */
+}
+
+.silver-title {
+    color: silver; /* 左侧标题为银色 */
+}
+
+.bronze-title {
+    color: #cd7f32; /* 右侧标题为铜色 */
+}
+
+/* 列表样式 */
+.scrol-list {
+    list-style-type: none; /* 去掉默认的圆点样式 */
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* 垂直滚动 */
+    width: 150px; /* 每个列表的固定宽度 */
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 5px;
+    background-color: #fff; /* 背景色 */
+}
+
+/* 左侧列表样式 */
+.left-list {
+    max-height: 200px; /* 左侧列表高度 */
+}
+
+/* 中间列表样式 */
+.middle-list {
+    max-height: 300px; /* 中间列表高度 */
+}
+
+/* 右侧列表样式 */
+.right-list {
+    max-height: 200px; /* 右侧列表高度 */
+}
+
+/* 列表每项的样式 */
+.scrol-list li {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+/* 奇数行橘色 */
+.scrol-list li:nth-child(odd) {
+    background-color: orange;
+    font-weight: bold; /* 加粗 */
+}
+
+/* 偶数行红色 */
+.scrol-list li:nth-child(even) {
+    background-color: red;
+    color: white; /* 红色背景上文字用白色 */
+}
+
+/* 悬停效果 */
+.scrol-list li:hover {
+    background-color: #ececec;
+}
+
+/* 最后一项去掉边框 */
+.scrol-list li:last-child {
+    border-bottom: none;
+}
+
+
+.scrollableVoteDisplay-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 600px; /* 可根据需求调整高度 */
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.grid-item h4 {
+    margin-bottom: 10px;
+}
+
+.answers {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.answers button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.answers button:hover {
+    background-color: #0056b3;
+}
+
+.grid-item p {
+    font-size: 14px;
+    color: #555;
+}
+.join-link {
+    color: blue;
+    text-decoration: underline;
+    margin-left: 10px; /* 调整与前面文本的间距 */
+}
+.join-link:hover {
+    text-decoration: none; /* 鼠标悬停时去掉下划线 */
+}
+.score-table {
+    width: 100%;
+    border-collapse: collapse; /* 合并表格边框 */
+  }
+  
+  .score-table th, .score-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* 添加底部边框 */
+  }
+  
+  .score-table th {
+    background-color: #f0f0f0; /* 表头背景颜色 */
+  }
+  
+  .score-table td {
+    font-size: 16px;
+    color: #555;
+  }

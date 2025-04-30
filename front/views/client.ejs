@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <h2 class="title">ECS Example Game</h2>
+
+    <div id="game">
+        <div v-if="connected && currentStage === 'Auth'">
+            <%- include('chat'); -%>
+            <%- include('userAuth'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'Waiting'">
+            <%- include('waiting'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'PromptCollection'">
+            <%- include('promptCollect'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'Answer'">
+            <%- include('answerStage'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'Voting'">
+            <%- include('voting'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'ScoresShow'">
+            <%- include('score'); -%>
+        </div>
+        <div v-else-if="connected && currentStage === 'FinalScore'">
+            <p>game over...</p>
+            <div class="buttonRight-container" v-if="username !==''">
+                <button @click="thisGameEnd">Start the New Game</button>
+            </div>
+        </div>
+        <div v-else>
+            <p>Connecting...</p>
+        </div>
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>
